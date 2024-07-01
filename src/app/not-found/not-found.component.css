@@ -1,0 +1,25 @@
+/*
+ * Title: not-found.component.css
+ * Author: Phuong Tran
+ * Date: 06/22/2024
+ * Description: WEB 450 - nodebucket.
+*/
+
+.page-not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+img {
+  width: 400px;
+}
+

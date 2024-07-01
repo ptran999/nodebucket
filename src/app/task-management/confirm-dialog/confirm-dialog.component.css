@@ -1,0 +1,12 @@
+/*
+ * Title: confirm-dialog.component.css
+ * Author: Phuong Tran
+ * Date: 06/22/2024
+ * Description: WEB 450 - nodebucket.
+*/
+
+.dialog-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

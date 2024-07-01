@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+  Title: styles.css
+  Author: Phuong Tran
+  Date: 6/4/2024
+  Description: Styles for the app.
+*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  background-color: #9d7553 !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.bg-dark-blue {
+  background-color: #026487 !important;
+}
+
+.bg-blue {
+  background-color: #049dc7 !important;
+}
+
+.bg-dark-grey {
+  background-color: #646464;
+}
+
+.bg-light-grey {
+  background-color: #aaa;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-white {
+  background-color: #efeee9  !important;
+}
+
+.text-white {
+  color: #efeee9  !important;
+}
+
+.dark-blue {
+  color: #026487 !important;
+}
+
+.light-blue {
+  color: #049dc7 !important;
+}
+
+.white {
+  color: #fff !important;
+  font-size: 18px;
+}
+
+.dark-orange {
+  color: #9d7553 !important;
+  font-size: 22px;
+}
+
+.btn {
+  transition: 0.4s ease;
+  box-shadow:  0 4px 8px rgba(0,0,0,0.4);
+}
+
+.btn:hover {
+  background-color: #646464 !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: 0.5s ease;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  max-width: 960px;
+  background-color: #dbd6d6;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 5px 8px 10px #0000002f;
+}
+

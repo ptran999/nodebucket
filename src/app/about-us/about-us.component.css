@@ -1,0 +1,19 @@
+/*
+ * Title: about.component.css
+ * Author: Phuong tran
+ * Date: 06/22/2024
+ * Description: WEB-450 NodeBucket.
+ */
+
+.about-us-container {
+    text-align: center;
+    padding: 60px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 2rem;
+}

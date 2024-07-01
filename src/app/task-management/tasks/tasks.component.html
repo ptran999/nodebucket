@@ -1,0 +1,75 @@
+<!--
+    Title: task.component.html
+    Author: Phuong Tran
+    Date: 06/22/2024
+    Description: WEB 450 - nodebucket.
+-->
+
+<!-- Main container -->
+<div class="tks-container">
+  <h1 class="tks-main-title dark-blue">My tasks</h1>
+
+  <!-- Task form -->
+  <form #taskForm="ngForm" (ngSubmit)="createTask(taskForm); taskForm.reset()" class="tks-form">
+    <input type="text" name="task" ngModel required placeholder="Enter a new task..." class="input-group-text">
+    <input type="submit" value="Add Task" [disabled]="!taskForm.valid" class="btn bg-dark-blue text-white fw-bold">
+  </form>
+
+  <div class="message-container">
+    <div *ngIf="errorMessage" role="alert" class="alert alert-danger message">
+      {{ errorMessage }}
+    </div>
+  </div>
+
+<!-- Tasks container -->
+  <div class="tks-columns-container">
+
+    <!-- Todo tasks column-->
+    <div class="tks-column">
+      <h2 class="dark-blue">Todo</h2>
+      <div class="tks-list-container"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      (cdkDropListDropped)="drop($event)">
+
+        <div *ngIf="todo.length === 0 || !todo" class="no-tks alert alert-danger">
+          No tasks to do yet!
+        </div>
+
+        <div *ngFor="let task of todo" cdkDrag [cdkDragData]="task" class="tks-card" [ngClass]="{'todo-task': true}">
+          {{ task.text }}
+          <button class="delete-btn float-end" (click)="deleteTask(task._id)">
+            <span class="material-icons delete-icon">delete</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Done tasks column -->
+    <div class="tks-column">
+      <h2 class="dark-blue">Done</h2>
+      <div class="tks-list-container"
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      (cdkDropListDropped)="drop($event)">
+
+        <div *ngIf="done.length === 0 || !done" class="no-tks alert alert-danger">
+          No tasks done yet!
+        </div>
+
+        <div *ngFor="let task of done" cdkDrag [cdkDragData]="task" class="tks-card" [ngClass]="{'done-task': true}">
+          {{ task.text }}
+          <button class="delete-btn" (click)="deleteTask(task._id)">
+            <span class="material-icons delete-icon">delete</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
